@@ -4,7 +4,7 @@ import Link from "next/link";
 import Button from "@/components/UI/Button/button";
 
 import { useAppContext } from "@/context/AppContext";
-import { MENU_ABOUT, MENU_BLOG, MENU_EVENTS, MENU_PRICING } from "@/constants/menuLabelsConstants";
+import { HEADER_MENU } from "@/constants/menuLabelsConstants";
 
 const Navigation: React.FC = () => {
     const { state, dispatch } = useAppContext();
@@ -16,28 +16,17 @@ const Navigation: React.FC = () => {
         <div>
             <div className="hidden lg:block">
                 <div className="flex items-center gap-x-12">
-                    <ul className="flex items-center gap-x-12">
-                        <li>
-                            <Link href="#">
-                                {MENU_ABOUT}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="#">
-                                {MENU_PRICING}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="#">
-                                {MENU_BLOG}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="#">
-                                {MENU_EVENTS}
-                            </Link>
-                        </li>
-                    </ul>
+                    {HEADER_MENU.length > 0 &&
+                        <ul className="flex items-center gap-x-12">
+                            {HEADER_MENU.map((item, index) =>
+                                <li key={index}>
+                                    <Link href={item.link}>
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            )}
+                        </ul>
+                    }
                     <div className="flex gap-x-6">
                         <Button invert={true}>Login</Button>
                         <Button>Sign Up</Button>

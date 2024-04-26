@@ -4,7 +4,7 @@ import Logo from '@/components/UI/Logo/logo';
 
 import { useAppContext } from '@/context/AppContext';
 
-import { MENU_ABOUT, MENU_PRICING, MENU_BLOG, MENU_EVENTS } from '@/constants/menuLabelsConstants';
+import { HEADER_MENU } from '@/constants/menuLabelsConstants';
 
 const MobileNavigation: React.FC = () => {
     const { state, dispatch } = useAppContext();
@@ -31,28 +31,17 @@ const MobileNavigation: React.FC = () => {
                 </button>
             </div>
             <nav className="px-5 py-6">
+            {HEADER_MENU.length > 0 &&
                 <ul className="flex flex-col font-neue-regrade font-bold text-5xl text-white gap-8">
-                    <li>
-                        <Link href="#">
-                            {MENU_ABOUT}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#">
-                            {MENU_PRICING}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#">
-                            {MENU_BLOG}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#">
-                            {MENU_EVENTS}
-                        </Link>
-                    </li>
+                    {HEADER_MENU.map((item, index) => 
+                        <li key={index}>
+                            <Link href={item.link}>
+                                {item.label}
+                            </Link>
+                        </li>
+                    )}
                 </ul>
+            }
             </nav>
             <div className="flex items-center gap-x-6 absolute right-5 bottom-6 font-general-sans font-semibold text-sm text-white px-5">
                 <Link href="#" className="block py-3 px-6">Sign Up</Link>
