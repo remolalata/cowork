@@ -37,9 +37,9 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <div className="flex flex-col lg:flex-row items-center gap-y-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-y-8">
             <div className="text-center lg:text-left">{COPYRIGHT_NOTICE}</div>
-            <ul className="w-full flex items-center justify-between underline">
+            <ul className="flex items-center gap-x-6 underline">
               <li>
                 <Link href="#">{LEGAL_LINKS.PRIVACY_POLICY}</Link>
               </li>

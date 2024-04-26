@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper {
+    @apply !px-5;
+}
+
+.swiper-wrapper {
+    @apply items-center;
+}
+
 .container {
     max-width: 1312px;
     @apply px-5;
+}
+
+.container.social-proof {
+    @apply px-0
 }
