@@ -17,8 +17,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-title-pattern": "url('../public/images/hero-title-pattern.svg')"
       },
       colors: {
         "humble-black": "#1D1E1C"

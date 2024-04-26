@@ -23,13 +23,13 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div className="lg:w-[588px] flex flex-col md:flex-row gap-y-6 gap-x-[40px]">
-              <div className="lg:w-1/3">
+              <div className="md:w-1/3">
                 <FooterMenu heading={SITE_PAGES_MENU_HEADING} data={FOOTER_MENU_SITE_PAGES} />
               </div>
-              <div className="lg:w-1/3">
+              <div className="md:w-1/3">
                 <FooterMenu heading={ENGAGEMENT_MENU_HEADING} data={FOOTER_MENU_ENGAGEMENT} />
               </div>
-              <div className="lg:w-1/3">
+              <div className="md:w-1/3">
                 <FooterMenu heading={SOCIAL_MEDIA_MENU_HEADING} data={FOOTER_MENU_SOCIAL_MEDIA} />
               </div>
             </div>
@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <div className="flex flex-col md:flex-row items-center gap-y-8">
-            <div className="text-center md:text-left">{COPYRIGHT_NOTICE}</div>
+          <div className="flex flex-col lg:flex-row items-center gap-y-8">
+            <div className="text-center lg:text-left">{COPYRIGHT_NOTICE}</div>
             <ul className="w-full flex items-center justify-between underline">
               <li>
                 <Link href="#">{LEGAL_LINKS.PRIVACY_POLICY}</Link>

@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useAppContext } from "@/context/AppContext";
 
 import Layout from "@/components/Layout/layout";
+import Banner from "@/components/Banner/banner";
 
 const Home: React.FC = () => {
   const { state, dispatch } = useAppContext();
@@ -16,7 +17,9 @@ const Home: React.FC = () => {
         </Head>
       </>
       <Layout>
-        <h1>Home</h1>
+        <section>
+          <Banner />
+        </section>
       </Layout>
     </>
   )

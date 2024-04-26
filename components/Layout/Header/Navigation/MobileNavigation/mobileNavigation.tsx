@@ -18,7 +18,7 @@ const MobileNavigation: React.FC = () => {
   };
 
     return (
-        <div className={`bg-humble-black absolute top-0 left-0 h-full overflow-hidden transition-[width] duration-300 delay-0 ${showNav}`}>
+        <div className={`bg-humble-black absolute top-0 left-0 z-50 h-full overflow-hidden transition-[width] duration-300 delay-0 ${showNav}`}>
             <div className="flex items-center justify-between px-5 py-7">
                 <Logo invert={true} />
                 <button className="flex items-center justify-center w-[60px] h-[45px]" onClick={handleToggleMobileNav}>
