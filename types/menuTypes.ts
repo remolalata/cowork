@@ -1,0 +1,1 @@
+export type MenuLabel = "About" | "Pricing" | "Blog" | "Events";
