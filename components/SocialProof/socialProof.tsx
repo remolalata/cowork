@@ -3,11 +3,16 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from 'swiper/modules';
 
-import { SOCIAL_PROOF_IMAGES } from "@/constants/siteLabelsConstants";
+import { SOCIAL_PROOF_HEADING, SOCIAL_PROOF_IMAGES } from "@/constants/siteLabelsConstants";
 
 import 'swiper/css';
+import { SocialProof as SocialProofType } from "@/types/customTypes";
 
-const SocialProof: React.FC = () => {
+interface SocialProofProps {
+    topClients: SocialProofType
+}
+
+const SocialProof: React.FC<SocialProofProps> = (props) => {
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -27,9 +32,9 @@ const SocialProof: React.FC = () => {
 
     return (
         <div className="container social-proof py-12 lg:py-28">
-            <h2 className="font-general-sans font-semibold font-xs text-center">TRUSTED BY LEADING COMPANIES</h2>
+            <h2 className="font-general-sans font-semibold font-xs text-center">{SOCIAL_PROOF_HEADING}</h2>
 
-            {SOCIAL_PROOF_IMAGES.length > 0 &&
+            {props.topClients.length > 0 &&
                 <div className="mt-6">
                     {isMobile ? (
                         <Swiper
@@ -38,7 +43,7 @@ const SocialProof: React.FC = () => {
                             modules={[Pagination, Navigation]}
                             className="mySwiper"
                         >
-                            {SOCIAL_PROOF_IMAGES.map((item, index) =>
+                            {props.topClients.map((item, index) =>
                                 <SwiperSlide key={index}>
                                     <Image
                                         src={item.src}
@@ -51,7 +56,7 @@ const SocialProof: React.FC = () => {
                         </Swiper>
                     ) : (
                         <ul className="w-fit mx-auto flex items-center gap-x-12">
-                            {SOCIAL_PROOF_IMAGES.map((item, index) =>
+                            {props.topClients.map((item, index) =>
                                 <li key={index}>
                                     <Image
                                         src={item.src}

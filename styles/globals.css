@@ -10,6 +10,10 @@
     @apply items-center;
 }
 
+.feature-pattern {
+    @apply inline-block w-[181px] h-[58px] bg-feature-pattern
+}
+
 .container {
     max-width: 1312px;
     @apply px-5;

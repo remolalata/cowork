@@ -6,5 +6,5 @@ export type SocialProof = {
     src: string,
     width: number,
     height: number,
-    alt: string
+    label: string
 }[];

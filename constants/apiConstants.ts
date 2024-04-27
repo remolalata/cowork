@@ -1,0 +1,1 @@
+export const SOCIAL_PROOF_API = "https://cowork-424b5-default-rtdb.asia-southeast1.firebasedatabase.app/social_proof.json";

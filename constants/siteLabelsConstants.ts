@@ -5,6 +5,7 @@ export const BANNER_HERO_SRC: string = "/images/hero.jpg";
 export const BANNER_HERO_IMAGE_ALT = "Two people having a meeting in a modern office lounge with stylish seating and vibrant decor.";
 export const BANNER_CTA: string = "Claim Your Spot";
 
+export const SOCIAL_PROOF_HEADING: string = "TRUSTED BY LEADING COMPANIES";
 export const SOCIAL_PROOF_IMAGES: SocialProof = [
     {
         src: "/images/social-proof/1.png",

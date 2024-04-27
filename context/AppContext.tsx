@@ -1,13 +1,22 @@
 import React, { createContext, useReducer, useContext, Dispatch, ReactNode } from "react";
 
+import { SocialProof } from "@/types/customTypes";
+
 interface AppState {
-    toggleMobileNav: boolean
+    toggleMobileNav: boolean,
+    isMobile: boolean,
+    socialProof: SocialProof
 }
 
-type Action = | { type: "TOGGLE_MOBILE_NAV" };
+type Action =
+    | { type: "TOGGLE_MOBILE_NAV" }
+    | { type: "SET_IS_MOBILE" , payload: boolean }
+    | { type: "SET_SOCIAL_PROOF", payload: SocialProof }
 
 const initialState: AppState = {
-    toggleMobileNav: false
+    toggleMobileNav: false,
+    isMobile: false,
+    socialProof: []
 }
 
 const AppContext = createContext<{
@@ -24,6 +33,16 @@ const appReducer = (state: AppState, action: Action): AppState => {
             return {
                 ...state,
                 toggleMobileNav: !state.toggleMobileNav
+            }
+        case "SET_IS_MOBILE":
+            return {
+                ...state,
+                isMobile: action.payload
+            }
+        case "SET_SOCIAL_PROOF":
+            return {
+                ...state,
+                socialProof: action.payload
             }
         default:
             return state;
