@@ -22,3 +22,23 @@
 .container.social-proof {
     @apply px-0
 }
+
+.statistic-heading {
+    @apply relative font-neue-regrade font-bold text-5xl before:content-[''] before:absolute before:w-9 before:h-9 before:bg-[#D3F985] before:rounded-full before:left-1/2 before:-translate-x-1/2 before:-bottom-1.5 before:-z-10
+}
+
+.statistic-heading0 {
+    @apply before:bg-[#D3F985]
+}
+
+.statistic-heading1 {
+    @apply before:bg-[#A6E8F6]
+}
+
+.statistic-heading2 {
+    @apply before:bg-[#FCBEDC]
+}
+
+.statistic-heading3 {
+    @apply before:bg-[#FBC899]
+}

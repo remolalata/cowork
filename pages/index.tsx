@@ -8,13 +8,16 @@ import Layout from "@/components/Layout/layout";
 import Banner from "@/components/Banner/banner";
 import SocialProof from "@/components/SocialProof/socialProof";
 import Features from "@/components/Features/features";
+import Statistics from "@/components/Statistics/statistics";
 
-import { SOCIAL_PROOF_IMAGES } from "@/constants/siteLabelsConstants";
-import { SOCIAL_PROOF_API } from "@/constants/apiConstants";
-import { SocialProof as SocialProofType } from "@/types/customTypes";
+import { fetchMockData } from "@/utils/helpers";
+
+import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType } from "@/types/customTypes";
 
 interface HomeProps {
-  socialProof: SocialProofType
+  socialProof: SocialProofType,
+  features: FeaturesType,
+  statistics: StatisticsType
 }
 
 const Home: React.FC<HomeProps> = (props) => {
@@ -22,7 +25,9 @@ const Home: React.FC<HomeProps> = (props) => {
 
   useEffect(() => {
     dispatch({ type: "SET_SOCIAL_PROOF", payload: props.socialProof });
-    
+    dispatch({ type: "SET_FEATURES", payload: props.features });
+    dispatch({ type: "SET_STATISTICS", payload: props.statistics });
+
     const handleResize = () => {
       dispatch({ type: "SET_IS_MOBILE", payload: window.innerWidth < 1024 });
     };
@@ -47,24 +52,41 @@ const Home: React.FC<HomeProps> = (props) => {
         <section>
           <Banner />
         </section>
-        <section>
-          <SocialProof topClients={SOCIAL_PROOF_IMAGES} />
-        </section>
-        <section>
-          <Features />
-        </section>
+
+        {state.socialProof.length > 0 &&
+          <section>
+            <SocialProof data={state.socialProof} />
+          </section>
+        }
+
+        {state.features.length > 0 &&
+          <section>
+            <Features data={state.features} />
+          </section>
+        }
+
+        {state.statistics.length > 0 &&
+          <section>
+            <Statistics data={state.statistics} />
+          </section>
+        }
       </Layout>
     </>
   )
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (context) => {
-  const res = await fetch(SOCIAL_PROOF_API);
-  const data = await res.json();
+  const socialProofPromise = fetchMockData("social-proof.json");
+  const featuresPromise = fetchMockData("features.json");
+  const statisticsPromise = fetchMockData("statistics.json");
+
+  const [socialProof, features, statistics] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise])
 
   return {
     props: {
-      socialProof: data
+      socialProof,
+      features,
+      statistics
     },
   };
 };

@@ -9,7 +9,7 @@ import 'swiper/css';
 import { SocialProof as SocialProofType } from "@/types/customTypes";
 
 interface SocialProofProps {
-    topClients: SocialProofType
+    data: SocialProofType
 }
 
 const SocialProof: React.FC<SocialProofProps> = (props) => {
@@ -34,7 +34,7 @@ const SocialProof: React.FC<SocialProofProps> = (props) => {
         <div className="container social-proof py-12 lg:py-28">
             <h2 className="font-general-sans font-semibold font-xs text-center">{SOCIAL_PROOF_HEADING}</h2>
 
-            {props.topClients.length > 0 &&
+            {props.data.length > 0 &&
                 <div className="mt-6">
                     {isMobile ? (
                         <Swiper
@@ -43,26 +43,26 @@ const SocialProof: React.FC<SocialProofProps> = (props) => {
                             modules={[Pagination, Navigation]}
                             className="mySwiper"
                         >
-                            {props.topClients.map((item, index) =>
+                            {props.data.map((item, index) =>
                                 <SwiperSlide key={index}>
                                     <Image
                                         src={item.src}
                                         width={item.width}
                                         height={item.height}
-                                        alt={item.alt}
+                                        alt={item.label}
                                     />
                                 </SwiperSlide>
                             )}
                         </Swiper>
                     ) : (
                         <ul className="w-fit mx-auto flex items-center gap-x-12">
-                            {props.topClients.map((item, index) =>
+                            {props.data.map((item, index) =>
                                 <li key={index}>
                                     <Image
                                         src={item.src}
                                         width={item.width}
                                         height={item.height}
-                                        alt={item.alt}
+                                        alt={item.label}
                                     />
                                 </li> 
                             )}

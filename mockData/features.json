@@ -1,0 +1,32 @@
+[
+    {
+        "icon": {
+            "src": "/images/features/flexible-spaces.svg",
+            "width": 76,
+            "height": 48,
+            "alt": ""
+        },
+        "heading": "Flexible Spaces",
+        "content": "Whether you're a solopreneur, startup, or an established enterprise, our flexible office solutions cater to your evolving needs."
+    },
+    {
+        "icon": {
+            "src": "/images/features/transparent-pricing.svg",
+            "width": 76,
+            "height": 48,
+            "alt": ""
+        },
+        "heading": "Transparent Pricing",
+        "content": "Choose a plan that suits your budget and business objectives, and experience the value of a premium coworking space without breaking the bank."
+    },
+    {
+        "icon": {
+            "src": "/images/features/tailored-membership.svg",
+            "width": 77,
+            "height": 48,
+            "alt": ""
+        },
+        "heading": "Tailored Memberships",
+        "content": "Whether you prefer the flexibility of a hot desk or the exclusivity of a private office, Cowork offers tailored solutions to suit every working style."
+    }
+]
