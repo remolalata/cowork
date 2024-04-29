@@ -28,3 +28,16 @@ export interface Statistic {
 }
 
 export type Statistics = Statistic[]
+
+export interface TestimonialSUser {
+    avatar: string,
+    name: string,
+    title: string
+}
+
+export type Testimonial = {
+    user: TestimonialSUser,
+    comment: string
+};
+
+export type Testimonials = Testimonial[];

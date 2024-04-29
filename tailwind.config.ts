@@ -23,7 +23,8 @@ const config: Config = {
         "virtual-tour-pattern": "url('../public/images/virtual-tour-pattern.png')",
       },
       colors: {
-        "humble-black": "#1D1E1C"
+        "humble-black": "#1D1E1C",
+        "powerless-gray": "#F1F1F1"
       }
     },
   },

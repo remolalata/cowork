@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionHeading from "../UI/SectionHeading/sectionHeading";
+import SectionStandfirst from "../UI/SectionStandfirst/sectionStandfirst";
 
 import Stat from "./Stat/stat";
 
@@ -15,7 +16,7 @@ const Statistics: React.FC<StatisticsProps> = (props) => {
         <div className="container flex flex-col items-center gap-y-10 gap-x-20 lg:flex-row py-16 lg:py-28">
             <div>
                 <SectionHeading>{STATISTICS_HEADING}</SectionHeading>
-                <p className="font-neue-regrade text-2xl text-center mt-4">{STATISTICS_STANDFIRST}</p>
+                <SectionStandfirst>{STATISTICS_STANDFIRST}</SectionStandfirst>
 
                 {props.data.length > 0 &&
                     <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-6">

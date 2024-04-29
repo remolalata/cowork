@@ -1,13 +1,14 @@
 import React, { createContext, useReducer, useContext, Dispatch, ReactNode } from "react";
 
-import { Features, SocialProof, Statistics } from "@/types/customTypes";
+import { Features, SocialProof, Statistics, Testimonials } from "@/types/customTypes";
 
 interface AppState {
     toggleMobileNav: boolean,
     isMobile: boolean,
     socialProof: SocialProof,
     features: Features,
-    statistics: Statistics
+    statistics: Statistics,
+    testimonials: Testimonials
 }
 
 type Action =
@@ -16,13 +17,15 @@ type Action =
     | { type: "SET_SOCIAL_PROOF", payload: SocialProof }
     | { type: "SET_FEATURES", payload: Features }
     | { type: "SET_STATISTICS", payload: Statistics }
+    | { type: "SET_TESTIMONIALS", payload: Testimonials }
 
 const initialState: AppState = {
     toggleMobileNav: false,
     isMobile: false,
     socialProof: [],
     features: [],
-    statistics: []
+    statistics: [],
+    testimonials: []
 }
 
 const AppContext = createContext<{
@@ -59,6 +62,11 @@ const appReducer = (state: AppState, action: Action): AppState => {
             return {
                 ...state,
                 statistics: action.payload
+            }
+        case "SET_TESTIMONIALS":
+            return {
+                ...state,
+                testimonials: action.payload
             }
         default:
             return state;

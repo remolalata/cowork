@@ -10,15 +10,17 @@ import SocialProof from "@/components/SocialProof/socialProof";
 import Features from "@/components/Features/features";
 import Statistics from "@/components/Statistics/statistics";
 import VirtualTour from "@/components/VirtualTour/virtualTour";
+import Testimonials from "@/components/Testimonails/testimonials";
 
 import { fetchMockData } from "@/utils/helpers";
 
-import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType } from "@/types/customTypes";
+import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType, Testimonials as TestimonialsType } from "@/types/customTypes";
 
 interface HomeProps {
   socialProof: SocialProofType,
   features: FeaturesType,
-  statistics: StatisticsType
+  statistics: StatisticsType,
+  testimonials: TestimonialsType
 }
 
 const Home: React.FC<HomeProps> = (props) => {
@@ -28,6 +30,7 @@ const Home: React.FC<HomeProps> = (props) => {
     dispatch({ type: "SET_SOCIAL_PROOF", payload: props.socialProof });
     dispatch({ type: "SET_FEATURES", payload: props.features });
     dispatch({ type: "SET_STATISTICS", payload: props.statistics });
+    dispatch({ type: "SET_TESTIMONIALS", payload: props.testimonials });
 
     const handleResize = () => {
       dispatch({ type: "SET_IS_MOBILE", payload: window.innerWidth < 1024 });
@@ -54,19 +57,19 @@ const Home: React.FC<HomeProps> = (props) => {
           <Banner />
         </section>
 
-        {state.socialProof.length > 0 &&
+        {state.socialProof && state.socialProof.length > 0 &&
           <section>
             <SocialProof data={state.socialProof} />
           </section>
         }
 
-        {state.features.length > 0 &&
+        {state.features && state.features.length > 0 &&
           <section>
             <Features data={state.features} />
           </section>
         }
 
-        {state.statistics.length > 0 &&
+        {state.statistics && state.statistics.length > 0 &&
           <section>
             <Statistics data={state.statistics} />
           </section>
@@ -75,6 +78,12 @@ const Home: React.FC<HomeProps> = (props) => {
         <section>
           <VirtualTour />
         </section>
+
+        {state.testimonials && state.testimonials.length > 0 &&
+          <section>
+            <Testimonials data={state.testimonials} />
+          </section>
+        }
       </Layout>
     </>
   )
@@ -84,14 +93,16 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (context)
   const socialProofPromise = fetchMockData("social-proof.json");
   const featuresPromise = fetchMockData("features.json");
   const statisticsPromise = fetchMockData("statistics.json");
+  const testimonialsPromise = fetchMockData("testimonials.json");
 
-  const [socialProof, features, statistics] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise])
+  const [socialProof, features, statistics, testimonials] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise, testimonialsPromise]);
 
   return {
     props: {
       socialProof,
       features,
-      statistics
+      statistics,
+      testimonials
     },
   };
 };

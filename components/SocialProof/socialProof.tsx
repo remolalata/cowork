@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from 'swiper/modules';
@@ -14,22 +15,7 @@ interface SocialProofProps {
 }
 
 const SocialProof: React.FC<SocialProofProps> = (props) => {
-
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 1024);
-        };
-
-        handleResize();
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    const { state } = useAppContext();
 
     return (
         <div className="container social-proof py-12 lg:py-28">
@@ -37,7 +23,7 @@ const SocialProof: React.FC<SocialProofProps> = (props) => {
 
             {props.data.length > 0 &&
                 <div className="mt-6">
-                    {isMobile ? (
+                    {state.isMobile ? (
                         <Swiper
                             slidesPerView={3.2}
                             spaceBetween={24}
