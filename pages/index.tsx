@@ -9,6 +9,7 @@ import Banner from "@/components/Banner/banner";
 import SocialProof from "@/components/SocialProof/socialProof";
 import Features from "@/components/Features/features";
 import Statistics from "@/components/Statistics/statistics";
+import VirtualTour from "@/components/VirtualTour/virtualTour";
 
 import { fetchMockData } from "@/utils/helpers";
 
@@ -70,6 +71,10 @@ const Home: React.FC<HomeProps> = (props) => {
             <Statistics data={state.statistics} />
           </section>
         }
+
+        <section>
+          <VirtualTour />
+        </section>
       </Layout>
     </>
   )

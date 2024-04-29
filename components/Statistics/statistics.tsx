@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionHeading from "../UI/SectionHeading/sectionHeading";
 
 import Stat from "./Stat/stat";
 
@@ -13,7 +14,7 @@ const Statistics: React.FC<StatisticsProps> = (props) => {
     return (
         <div className="container flex flex-col items-center gap-y-10 gap-x-20 lg:flex-row py-16 lg:py-28">
             <div>
-                <h2 className="font-semibold text-xs text-center">{STATISTICS_HEADING}</h2>
+                <SectionHeading>{STATISTICS_HEADING}</SectionHeading>
                 <p className="font-neue-regrade text-2xl text-center mt-4">{STATISTICS_STANDFIRST}</p>
 
                 {props.data.length > 0 &&
@@ -24,7 +25,7 @@ const Statistics: React.FC<StatisticsProps> = (props) => {
                     </div>
                 }
             </div>
-            <div className="relative w-full lg:w-[640px] h-80 lg:h-[640px] rounded-3xl overflow-hidden">
+            <div className="relative w-full lg:w-[500px] xl:w-[600px] h-[320px] lg:h-[500px] xl:h-[600px] rounded-3xl lg:rounded-[48px] overflow-hidden">
                 <Image
                     src={"/images/statistics-image.jpg"}
                     fill

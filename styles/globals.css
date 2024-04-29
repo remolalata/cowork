@@ -14,6 +14,10 @@
     @apply inline-block w-[181px] h-[58px] bg-feature-pattern
 }
 
+.virtual-tour-pattern {
+    @apply inline-block w-[121px] h-[34px] bg-virtual-tour-pattern
+}
+
 .container {
     max-width: 1312px;
     @apply px-5;

@@ -20,6 +20,7 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-title-pattern": "url('../public/images/hero-title-pattern.svg')",
         "feature-pattern": "url('../public/images/feature-pattern.png')",
+        "virtual-tour-pattern": "url('../public/images/virtual-tour-pattern.png')",
       },
       colors: {
         "humble-black": "#1D1E1C"

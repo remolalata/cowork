@@ -39,6 +39,7 @@ const Navigation: React.FC = () => {
                     type="button"
                     className="flex items-center justify-center bg-humble-black p-3 rounded-[42px] w-[60px] h-[45px]"
                     onClick={handleToggleMobileNav}
+                    aria-label="open menu"
                 >
                     <Image src="/images/hamburger.svg" width={24} height={18} alt="" />
                 </button>

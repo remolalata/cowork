@@ -7,3 +7,7 @@ export const SOCIAL_PROOF_HEADING: string = "TRUSTED BY LEADING COMPANIES";
 
 export const STATISTICS_HEADING: string = "COWORK IN NUMBERS";
 export const STATISTICS_STANDFIRST: string = "Transformative Statistics That Speak Volumes";
+
+export const VIRTUAL_TOUR_HEADING: string = "A VIRTUAL TOUR";
+export const VIRTUAL_TOUR_CONTENT: string = "Experience the essence of Cowork before setting foot in our dynamic spaces. Our immersive video tour gives you a sneak peek into the vibrant atmosphere, cutting-edge facilities, and collaborative energy that define the Cowork experience.";
+export const VIRTUAL_TOUR_BUTTON_LABEL: string = "Explore Spaces";
