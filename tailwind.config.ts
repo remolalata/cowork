@@ -22,6 +22,7 @@ const config: Config = {
         "feature-pattern": "url('../public/images/feature-pattern.png')",
         "virtual-tour-pattern": "url('../public/images/virtual-tour-pattern.png')",
         "cta-pattern": "url('../public/images/cta-pattern.png')",
+        "blogs-pattern": "url('../public/images/blogs-pattern.png')",
       },
       colors: {
         "humble-black": "#1D1E1C",

@@ -21,3 +21,6 @@ export const FAQS_CONTENT: string = "Frequently asked questions ordered by popul
 
 export const CTA_CONTENT: string = "Uncover the transformative power of Cowork as echoed by those who've made it their professional haven. This is more than finding a desk; it's discovering a community that fuels your journey to success.";
 export const CTA_LABEL: string = "Claim Your Spot";
+
+export const BLOGS_HEADING: string = "COWORK CHRONICLES";
+export const BLOGS_CONTENT: string = "Stay updated on the latest trends in coworking, productivity tips, and success stories that define the Cowork experience.";

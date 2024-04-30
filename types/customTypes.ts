@@ -48,3 +48,12 @@ export interface FAQ {
 };
 
 export type FAQS = FAQ[];
+
+export interface Blog {
+    title: string,
+    duration: string,
+    tag: string,
+    image: string
+}
+
+export type Blogs = Blog[];

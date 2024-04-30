@@ -22,6 +22,10 @@
     @apply inline-block w-[160px] h-[58px] bg-cta-pattern
 }
 
+.blogs-pattern {
+    @apply inline-block w-[121px] h-[34px] bg-blogs-pattern
+}
+
 .container {
     max-width: 1312px;
     @apply px-5;
@@ -73,4 +77,16 @@
 
 .testimonial-item-4 {
     @apply bg-[#FBC899];
+}
+
+.blog-tag {
+    @apply font-semibold py-1 px-2 rounded-lg bg-[#A6E8F6]
+}
+
+.blog-tag-1 {
+    @apply bg-[#FCBEDC]
+}
+
+.blog-tag-2 {
+    @apply bg-[#D3F985]
 }

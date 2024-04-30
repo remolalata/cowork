@@ -13,17 +13,19 @@ import VirtualTour from "@/components/VirtualTour/virtualTour";
 import Testimonials from "@/components/Testimonails/testimonials";
 import FAQS from "@/components/FAQS/faqs";
 import CTA from "@/components/CTA/cta";
+import Blogs from "@/components/Blogs/blogs";
 
 import { fetchMockData } from "@/utils/helpers";
 
-import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType, Testimonials as TestimonialsType, FAQS as FAQSType } from "@/types/customTypes";
+import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType, Testimonials as TestimonialsType, FAQS as FAQSType, Blogs as BlogsType } from "@/types/customTypes";
 
 interface HomeProps {
   socialProof: SocialProofType,
   features: FeaturesType,
   statistics: StatisticsType,
   testimonials: TestimonialsType,
-  faqs: FAQSType
+  faqs: FAQSType,
+  blogs: BlogsType
 }
 
 const Home: React.FC<HomeProps> = (props) => {
@@ -35,6 +37,7 @@ const Home: React.FC<HomeProps> = (props) => {
     dispatch({ type: "SET_STATISTICS", payload: props.statistics });
     dispatch({ type: "SET_TESTIMONIALS", payload: props.testimonials });
     dispatch({ type: "SET_FAQS", payload: props.faqs });
+    dispatch({ type: "SET_BLOGS", payload: props.blogs });
 
     const handleResize = () => {
       dispatch({ type: "SET_IS_MOBILE", payload: window.innerWidth < 1024 });
@@ -98,6 +101,12 @@ const Home: React.FC<HomeProps> = (props) => {
         <section>
           <CTA />
         </section>
+
+        {state.blogs && state.blogs.length > 0 &&
+          <section>
+            <Blogs data={state.blogs} />
+          </section>
+        }
       </Layout>
     </>
   )
@@ -109,8 +118,9 @@ export const getStaticProps: GetStaticProps<HomeProps> = async (context) => {
   const statisticsPromise = fetchMockData("statistics.json");
   const testimonialsPromise = fetchMockData("testimonials.json");
   const faqsPromise = fetchMockData("faqs.json");
+  const blogsPromise = fetchMockData("blogs.json");
 
-  const [socialProof, features, statistics, testimonials, faqs] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise, testimonialsPromise, faqsPromise]);
+  const [socialProof, features, statistics, testimonials, faqs, blogs] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise, testimonialsPromise, faqsPromise, blogsPromise]);
 
   return {
     props: {
@@ -118,7 +128,8 @@ export const getStaticProps: GetStaticProps<HomeProps> = async (context) => {
       features,
       statistics,
       testimonials,
-      faqs
+      faqs,
+      blogs
     },
   };
 };
