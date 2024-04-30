@@ -14,6 +14,7 @@ Check out the live demo of the project [here](https://cowork-nine.vercel.app/).
 
 - Next.js
 - TypeScript
+- TailwindCSS
 
 ## Getting Started
 
