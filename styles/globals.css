@@ -18,6 +18,10 @@
     @apply inline-block w-[121px] h-[34px] bg-virtual-tour-pattern
 }
 
+.cta-pattern {
+    @apply inline-block w-[160px] h-[58px] bg-cta-pattern
+}
+
 .container {
     max-width: 1312px;
     @apply px-5;

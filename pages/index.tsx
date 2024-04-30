@@ -12,6 +12,7 @@ import Statistics from "@/components/Statistics/statistics";
 import VirtualTour from "@/components/VirtualTour/virtualTour";
 import Testimonials from "@/components/Testimonails/testimonials";
 import FAQS from "@/components/FAQS/faqs";
+import CTA from "@/components/CTA/cta";
 
 import { fetchMockData } from "@/utils/helpers";
 
@@ -93,6 +94,10 @@ const Home: React.FC<HomeProps> = (props) => {
             <FAQS data={state.faqs} />
           </section>
         }
+
+        <section>
+          <CTA />
+        </section>
       </Layout>
     </>
   )

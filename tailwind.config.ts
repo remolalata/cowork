@@ -21,6 +21,7 @@ const config: Config = {
         "hero-title-pattern": "url('../public/images/hero-title-pattern.svg')",
         "feature-pattern": "url('../public/images/feature-pattern.png')",
         "virtual-tour-pattern": "url('../public/images/virtual-tour-pattern.png')",
+        "cta-pattern": "url('../public/images/cta-pattern.png')",
       },
       colors: {
         "humble-black": "#1D1E1C",

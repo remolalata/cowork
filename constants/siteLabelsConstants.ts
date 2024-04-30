@@ -18,3 +18,6 @@ export const TESTIMONIALS_STANDFIRST: string = "Heart It from Our Clients";
 export const FAQS_HEADING: string = "Frequently Asked Questions";
 export const FAQS_STANDFIRST: string = "Your Roadmap to Coworking Clarity";
 export const FAQS_CONTENT: string = "Frequently asked questions ordered by popularity. Remember that if the visitor has not committed to the call to action, they may still have questions (doubts) that can be answered.";
+
+export const CTA_CONTENT: string = "Uncover the transformative power of Cowork as echoed by those who've made it their professional haven. This is more than finding a desk; it's discovering a community that fuels your journey to success.";
+export const CTA_LABEL: string = "Claim Your Spot";
