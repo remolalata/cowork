@@ -36,6 +36,7 @@ const SocialProof: React.FC<SocialProofProps> = (props) => {
                                         src={item.src}
                                         width={item.width}
                                         height={item.height}
+                                        sizes="100vw"
                                         alt={item.label}
                                     />
                                 </SwiperSlide>

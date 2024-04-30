@@ -29,8 +29,10 @@ const Statistics: React.FC<StatisticsProps> = (props) => {
             <div className="relative w-full lg:w-[500px] xl:w-[600px] h-[320px] lg:h-[500px] xl:h-[600px] rounded-3xl lg:rounded-[48px] overflow-hidden">
                 <Image
                     src={"/images/statistics-image.jpg"}
-                    fill
-                    className="object-cover"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-full h-full object-cover"
                     alt=""
                 />
             </div>

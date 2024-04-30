@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 
 import { useAppContext } from "@/context/AppContext";
@@ -11,16 +11,18 @@ import Features from "@/components/Features/features";
 import Statistics from "@/components/Statistics/statistics";
 import VirtualTour from "@/components/VirtualTour/virtualTour";
 import Testimonials from "@/components/Testimonails/testimonials";
+import FAQS from "@/components/FAQS/faqs";
 
 import { fetchMockData } from "@/utils/helpers";
 
-import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType, Testimonials as TestimonialsType } from "@/types/customTypes";
+import { SocialProof as SocialProofType, Features as FeaturesType, Statistics as StatisticsType, Testimonials as TestimonialsType, FAQS as FAQSType } from "@/types/customTypes";
 
 interface HomeProps {
   socialProof: SocialProofType,
   features: FeaturesType,
   statistics: StatisticsType,
-  testimonials: TestimonialsType
+  testimonials: TestimonialsType,
+  faqs: FAQSType
 }
 
 const Home: React.FC<HomeProps> = (props) => {
@@ -31,6 +33,7 @@ const Home: React.FC<HomeProps> = (props) => {
     dispatch({ type: "SET_FEATURES", payload: props.features });
     dispatch({ type: "SET_STATISTICS", payload: props.statistics });
     dispatch({ type: "SET_TESTIMONIALS", payload: props.testimonials });
+    dispatch({ type: "SET_FAQS", payload: props.faqs });
 
     const handleResize = () => {
       dispatch({ type: "SET_IS_MOBILE", payload: window.innerWidth < 1024 });
@@ -84,25 +87,33 @@ const Home: React.FC<HomeProps> = (props) => {
             <Testimonials data={state.testimonials} />
           </section>
         }
+
+        {state.faqs && state.faqs.length > 0 &&
+          <section>
+            <FAQS data={state.faqs} />
+          </section>
+        }
       </Layout>
     </>
   )
 }
 
-export const getServerSideProps: GetServerSideProps<HomeProps> = async (context) => {
+export const getStaticProps: GetStaticProps<HomeProps> = async (context) => {
   const socialProofPromise = fetchMockData("social-proof.json");
   const featuresPromise = fetchMockData("features.json");
   const statisticsPromise = fetchMockData("statistics.json");
   const testimonialsPromise = fetchMockData("testimonials.json");
+  const faqsPromise = fetchMockData("faqs.json");
 
-  const [socialProof, features, statistics, testimonials] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise, testimonialsPromise]);
+  const [socialProof, features, statistics, testimonials, faqs] = await Promise.all([socialProofPromise, featuresPromise, statisticsPromise, testimonialsPromise, faqsPromise]);
 
   return {
     props: {
       socialProof,
       features,
       statistics,
-      testimonials
+      testimonials,
+      faqs
     },
   };
 };

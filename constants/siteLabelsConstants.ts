@@ -14,3 +14,7 @@ export const VIRTUAL_TOUR_BUTTON_LABEL: string = "Explore Spaces";
 
 export const TESTIMONIALS_HEADING: string = "COWORK IN WORDS";
 export const TESTIMONIALS_STANDFIRST: string = "Heart It from Our Clients";
+
+export const FAQS_HEADING: string = "Frequently Asked Questions";
+export const FAQS_STANDFIRST: string = "Your Roadmap to Coworking Clarity";
+export const FAQS_CONTENT: string = "Frequently asked questions ordered by popularity. Remember that if the visitor has not committed to the call to action, they may still have questions (doubts) that can be answered.";

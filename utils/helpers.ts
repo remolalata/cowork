@@ -1,11 +1,11 @@
-import fs from "fs/promises";
+import { readFile } from "fs/promises";
 import path from "path";
 
 export const fetchMockData = async (fileName: string): Promise<any> => {
   const filePath = path.join(process.cwd(), "mockData", fileName);
 
   try {
-    const jsonData = await fs.readFile(filePath, "utf8");
+    const jsonData = await readFile(filePath, "utf8");
     const data = JSON.parse(jsonData);
 
     return data;

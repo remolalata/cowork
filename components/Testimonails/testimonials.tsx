@@ -33,16 +33,14 @@ const Testimonials: React.FC<TestimonailsProps> = (props) => {
                         >
                             {props.data.map((item, index) =>
                                 <SwiperSlide key={index}>
-                                    <Testimonial data={item} />
+                                    <Testimonial index={index} data={item} />
                                 </SwiperSlide>
                             )}
                         </Swiper>
                     ) : (
-                        <div className="grid grid-cols-3 grid-flow-row gap-8">
+                        <div className="flex items-center justify-center flex-wrap gap-8">
                             {props.data.map((item, index) =>
-                                <SwiperSlide key={index}>
-                                    <Testimonial data={item} />
-                                </SwiperSlide>
+                                <Testimonial key={index} index={index} data={item} style={`flex-[0_0_calc(33%-32px)]`} />
                             )}
                         </div>
                     )}

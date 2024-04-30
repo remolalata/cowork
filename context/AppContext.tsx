@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext, Dispatch, ReactNode } from "react";
 
-import { Features, SocialProof, Statistics, Testimonials } from "@/types/customTypes";
+import { Features, SocialProof, Statistics, Testimonials, FAQS } from "@/types/customTypes";
 
 interface AppState {
     toggleMobileNav: boolean,
@@ -8,7 +8,8 @@ interface AppState {
     socialProof: SocialProof,
     features: Features,
     statistics: Statistics,
-    testimonials: Testimonials
+    testimonials: Testimonials,
+    faqs: FAQS
 }
 
 type Action =
@@ -18,6 +19,7 @@ type Action =
     | { type: "SET_FEATURES", payload: Features }
     | { type: "SET_STATISTICS", payload: Statistics }
     | { type: "SET_TESTIMONIALS", payload: Testimonials }
+    | { type: "SET_FAQS", payload: FAQS }
 
 const initialState: AppState = {
     toggleMobileNav: false,
@@ -25,7 +27,8 @@ const initialState: AppState = {
     socialProof: [],
     features: [],
     statistics: [],
-    testimonials: []
+    testimonials: [],
+    faqs: []
 }
 
 const AppContext = createContext<{
@@ -67,6 +70,11 @@ const appReducer = (state: AppState, action: Action): AppState => {
             return {
                 ...state,
                 testimonials: action.payload
+            }
+        case "SET_FAQS":
+            return {
+                ...state,
+                faqs: action.payload
             }
         default:
             return state;

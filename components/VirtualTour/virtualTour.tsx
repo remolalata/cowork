@@ -20,15 +20,20 @@ const VirtualTour: React.FC = () => {
             <div className="relative w-full h-80 md:h-[500px] lg:h-[700px] rounded-3xl overflow-hidden mt-10 lg:mt-20">
                 <Image
                     src={"/images/virtual-tour-image.jpg"}
-                    fill
-                    className="object-cover"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    priority
+                    className="w-full h-full object-cover"
                     alt=""
                 />
                 <div className="absolute w-16 lg:w-32 h-[52px] lg:h-[102px] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 cursor-pointer">
                     <Image
                         src={"/images/play-button.svg"}
-                        fill
-                        className="object-cover"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        className="w-full h-full object-cover"
                         alt=""
                     />
                 </div>

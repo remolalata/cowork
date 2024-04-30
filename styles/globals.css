@@ -46,3 +46,27 @@
 .statistic-heading3 {
     @apply before:bg-[#FBC899]
 }
+
+.testimonial-item {
+    @apply flex flex-col gap-y-6 bg-powerless-gray text-xs p-8 rounded-3xl;
+}
+
+.testimonial-item-0 {
+    @apply bg-[#D3F985];
+}
+
+.testimonial-item-1 {
+    @apply bg-[#F1F1F1];
+}
+
+.testimonial-item-2 {
+    @apply bg-[#A6E8F6];
+}
+
+.testimonial-item-3 {
+    @apply bg-[#FCBEDC];
+}
+
+.testimonial-item-4 {
+    @apply bg-[#FBC899];
+}

@@ -41,3 +41,10 @@ export type Testimonial = {
 };
 
 export type Testimonials = Testimonial[];
+
+export interface FAQ {
+    title: string,
+    content: string
+};
+
+export type FAQS = FAQ[];

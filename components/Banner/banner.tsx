@@ -20,9 +20,11 @@ const Banner: React.FC = () => {
                     <Image
                         src={BANNER_HERO_SRC}
                         alt={BANNER_HERO_IMAGE_ALT}
-                        fill
+                        width={0}
+                        height={0}
+                        sizes="100vw"
                         priority
-                        className="object-cover"
+                        className="w-full h-full object-cover"
                     />
                 </div>
             </div>
