@@ -57,6 +57,9 @@ const Home: React.FC<HomeProps> = (props) => {
       <>
         <Head>
           <title>Cowork</title>
+          <meta property="og:image" content="/images/preview-image.jpg" />
+          <meta property="og:title" content="Cowork" />
+          <meta property="og:description" content="Elevate Your Workspace with Cowork" />
         </Head>
       </>
       <Layout>
